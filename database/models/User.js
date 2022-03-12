@@ -21,7 +21,6 @@ const UserSchema = new Schema(
     },
     firstName: String,
     lastName: String,
-    // shop: { type: Schema.Types.ObjectId, ref: "Shop" },
   },
   {
     timestamps: true,

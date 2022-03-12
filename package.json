@@ -20,8 +20,14 @@
   "homepage": "https://github.com/DuaaAlk/mums-backend#readme",
   "dependencies": {
     "bcrypt": "^5.0.1",
+    "cors": "^2.8.5",
     "dotenv": "^16.0.0",
     "express": "^4.17.3",
-    "mongoose": "^6.2.5"
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.2.5",
+    "passport": "^0.5.2",
+    "passport-jwt": "^4.0.0",
+    "passport-local": "^1.0.0",
+    "path": "^0.12.7"
   }
 }

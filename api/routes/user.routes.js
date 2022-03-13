@@ -1,7 +1,11 @@
 const express = require("express");
 const passport = require("passport");
-
-const { signup, signin } = require("../controllers/user.controllers");
+const upload = require("../../middleware/multer");
+const {
+  signup,
+  signin,
+  createPost,
+} = require("../controllers/user.controllers");
 const router = express.Router();
 
 router.post("/signup", signup);
@@ -10,4 +14,10 @@ router.post(
   passport.authenticate("local", { session: false }),
   signin
 );
+router.post(
+  "/posts",
+  passport.authenticate("jwt", { session: false }),
+  createPost
+);
+
 module.exports = router;

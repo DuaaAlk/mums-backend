@@ -1,7 +1,5 @@
 const express = require("express");
 const { fetchPosts, fetchPost } = require("../controllers/post.controllers");
-// const passport = require("passport");
-// const upload = require("../../middleware/multer");
 
 const router = express.Router();
 

@@ -1,5 +1,6 @@
 const express = require("express");
 const userRouter = require("./api/routes/user.routes");
+const postRouter = require("./api/routes/post.routes");
 const connectDB = require("./Database/");
 const passport = require("passport");
 const { localStrategy, jwtStrategy } = require("./middleware/passport");
@@ -28,7 +29,7 @@ app.use((req, res, next) => {
 });
 
 //Route
-// app.use("/api/products", productRouter);
+app.use("/api/posts", postRouter);
 // app.use("/media", express.static(path.join(__dirname, "media")));
 // app.use("/api/shops", shopRouter);
 app.use("/api/user", userRouter);

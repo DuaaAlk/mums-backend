@@ -19,13 +19,16 @@ const UserSchema = new Schema(
       match: [/\S+@\S+\.\S+/, "is invalid"],
       index: true,
     },
+    image: String,
     firstName: String,
     lastName: String,
+    bio: String,
     posts: [{ type: Schema.Types.ObjectId, ref: "Post" }],
+    appointmentSlots: [{ type: Schema.Types.ObjectId, ref: "AppointmentSlot" }],
   },
   {
     timestamps: true,
   }
 );
 
-module.exports = model("user", UserSchema); //same "user" if i want to use as foriegn key
+module.exports = model("User", UserSchema); //same "user" if i want to use as foriegn key

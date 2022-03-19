@@ -36,7 +36,6 @@ exports.jwtStrategy = new JWTStrategy(
     try {
       const user = await User.findById(jwtPayload._id);
       if (user) {
-        console.log("User is found");
         done(null, user);
       } else done(null, false);
     } catch (error) {

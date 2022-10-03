@@ -1,7 +1,7 @@
 const express = require("express");
 const userRouter = require("./api/routes/user.routes");
 const postRouter = require("./api/routes/post.routes");
-const appointmeRouter = require("./api/routes/appointment.routes");
+const appointmentSlotRouter = require("./api/routes/appointmentSlot.routes");
 const connectDB = require("./Database/");
 const passport = require("passport");
 const { localStrategy, jwtStrategy } = require("./middleware/passport");
@@ -33,6 +33,7 @@ app.use((req, res, next) => {
 app.use("/api/posts", postRouter);
 // app.use("/media", express.static(path.join(__dirname, "media")));
 app.use("/api/user", userRouter);
+app.use("/api/appointmentSlot", appointmentSlotRouter);
 
 //Path not found middleware
 app.use((req, res, next) => {

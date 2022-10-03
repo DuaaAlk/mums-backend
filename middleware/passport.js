@@ -27,7 +27,7 @@ exports.jwtStrategy = new JWTStrategy(
   { jwtFromRequest: fromAuthHeaderAsBearerToken(), secretOrKey: JWT_SECRET },
   async (jwtPayload, done) => {
     // check if the token expires or not
-    console.log(jwtPayload);
+    // console.log(jwtPayload);
     if (Date.now() > jwtPayload.exp) {
       console.log("Token is expired");
       done(null, false);
